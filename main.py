@@ -8,6 +8,11 @@ while True:
     mixer.music.play()
     while mixer.music.get_busy():
         time.sleep(1)
-    screamTime = f"{(datetime.now() + timedelta(minutes=30)).hour}:{(datetime.now() + timedelta(minutes=30)).minute}"
-    print(f"Next scream will be at {screamTime}")
+    screamTime = datetime.now() + timedelta(minutes=30)
+    screamHour = screamTime.hour
+    screamMinute = screamTime.minute
+    if len(str(screamMinute)) == 1:
+        screamMinute = "0" + str(screamMinute)
+    screamText = f"{screamHour}:{screamMinute}"
+    print(f"Next scream will be at {screamText}")
     time.sleep(1800)
