@@ -4,7 +4,7 @@ from pygame import mixer
 
 while True:
     mixer.init()
-    mixer.music.load("C:/Users/xande/Documents/GitHub/Semi-hourly-Screaming/semi hourly screaming.mp3") # Change this to the folders in your computer
+    mixer.music.load("semi hourly screaming.mp3")
     mixer.music.play()
     while mixer.music.get_busy():
         time.sleep(1)
